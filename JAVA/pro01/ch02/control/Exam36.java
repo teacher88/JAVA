@@ -25,9 +25,8 @@ public class Exam36 {
 			System.out.println();
 			
 			System.out.print("¶ÇÇÒ·¡(y/n):");
-			loop=(char)System.in.read();
-			System.in.read();
-			System.in.read();
+			String str=sc.next();
+			loop=str.charAt(0);
 			
 		}while(loop=='Y' || loop=='y');
 		
