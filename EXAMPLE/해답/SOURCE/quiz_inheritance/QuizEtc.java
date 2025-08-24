@@ -1,4 +1,5 @@
-package ch05.quiz02;
+package ch06.quiz;
+
 
 import java.util.Scanner;
 
@@ -8,28 +9,34 @@ class Account{
 	protected long balance;
 	private int minus;
 		
-	public Account(){ }
-	
 	public void deposit(long money){		
+//		minus=50000;
+//		
+//		if(balance > 0){
+//			balance +=money;
+//		}else{
+//			long result=-balance+money;
+//			balance=-result;
+//		}
 		
 		if(balance > 0){     // -1000
-			System.out.println("OK1\t" + balance);
+			System.out.println("OK1");
 			balance +=money;
 		}else if(balance == 0){
 			System.out.println("OK2");
 			long result=balance+money;
 			balance=-result;
-		}else if(balance < 0){
+		}else{
+			System.out.println("OK:" + balance);
+			int minus=50000;
 			System.out.println("OK3");
 			minus=50000;
-
-				long result=minus-(-balance+money);   
-//				System.out.println("result" + result);
+			if(balance < 0){
+				long result=minus-money;   
 				balance=result;
-//				System.out.println("result:" + -result);
-
-		  // balance=-50000;
-		   System.out.println("balance:" + -balance);
+				// System.out.println("result:" + result);
+			}
+		    balance=-50000;
 		}
 	}
 }
@@ -80,7 +87,7 @@ class CheckingAccout extends Account{
 	}
 }
 
-public class Quiz322 {
+public class QuizEtc {
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);		
 		CheckingAccout account=new CheckingAccout();
@@ -93,7 +100,7 @@ public class Quiz322 {
 				System.out.print("입금액:");
 				long money=sc.nextLong();
 				account.deposit(money);
-				// account.disp();
+				account.disp();
 			}else if(value==2){
 				System.out.print("출금액:");
 				long money=sc.nextLong();
